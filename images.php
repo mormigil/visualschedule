@@ -8,25 +8,33 @@
 	<div id = "wrapper">
 	<div id = "content">
 	<?php
-	mysql_connect("mydb.cs.unc.edu", "woliverj", "CH@ngemenow99Please!woliverj") or
-	die(mysql_error());
-	mysql_select_db("comp523p1db") or die(mysql_error());
+	error_reporting(E_ALL);
+	ini_set("display_errors", 1);
+	$dhandle = opendir('upload');
+	$files = array();
+	while(false != ($fname = readdir($dhandle))){
+		if(($fname !='.')&&($fname != '..')){
+			$files[] = $fname;
+		}
+	}
+	closedir($dhandle);
+
+	$username = "root";
+	$password = "";
+	$host = "localhost";
+	$database = "comp_523";
+
+	mysql_connect($host, $username, $password) or
+	die("Can not connect to database: ".mysql_error());
+	mysql_select_db($database) or die("Can not select the database: ".mysql_error());
 	//get decoded image data from database 
-	$result=mysql_query("SELECT * FROM images WHERE img='".$_GET['img']."'"); 
 
-	//fetch data from database 
-	$data=mysql_fetch_array($result); 
-	$encoded=$data['data']; 
+	$data = mysql_query("SELECT image FROM images") or die(mysql_error());
+	$result = count($files);
 
-	//note: "$data['data']" is the row "data" in the table we made. 
-	//The image ID would be "$data['img']" for example 
-
-
-	//close connection 
-	mysql_close($connection); 
-
-	//decode and echo the image data 
-	echo base64_decode($encoded); 
+	for($i = 0; $result>=$i; $i++){
+		echo "<image src=upload/".$files[$i]."> <br>";
+	}
 
 	//end 
 	?>
