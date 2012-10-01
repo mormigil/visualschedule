@@ -1,0 +1,57 @@
+/*style.css*/
+body{
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+	text-align: center;
+}
+
+.draggable{
+	margin-top: 7%;
+	margin-left: 25%;
+	width: 300px;
+	height: 150px;
+}
+
+.droppable{
+	float: left;
+	margin-top: 7%;
+	margin-left: 25%;
+	width: 300px;
+	height: 150px;
+	border: 2px solid blue;
+	border-width: 5px;
+}
+
+.longbox_left{
+	width: 80%;
+	margin-top: 25%;
+	border: 2px solid black;
+	height: 300px;
+	float: right;
+}
+
+div.longbox{
+	width: 80%;
+	margin-top: 25%;
+	border: 2px solid black;
+	height: 300px;
+}
+
+div.floatleft {
+	border: 2px solid black;
+    float:left;
+    width: 49.4%;
+    background-color: #ff0000;
+    height: 100%;
+}
+
+div.floatright {
+	border: 2px solid black;
+	float: left;
+    background-color: #00ff00;
+    height: 100%;
+    width: 49.4%;
+}
