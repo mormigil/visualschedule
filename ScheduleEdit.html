@@ -17,23 +17,14 @@
 $(document).ready(function(){
 $(".draggable").draggable(
     {
-        axis:"x",
-        containment: "window",
-        revert: "invalid",
-      //  snap: true,
-      //  snapMode: "outer",
-      //  snapTolerance: 20,
-
         drag: function(){
-           
             var offset = $(this).offset();
             var xPos = offset.left;
             var yPos = offset.top;
             $('#posX').text('x: ' + xPos);
             $('#posY').text('y: ' + yPos);
         },
-        stop: function(){ 
-
+        stop: function(){
             var finalOffset = $(this).offset();
             var finalxPos = finalOffset.left;
             var finalyPos = finalOffset.top;
