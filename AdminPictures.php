@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule Creator</title>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" >
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+</head>
+<body> 
+<?php 
+        $username = "root";
+        $password = "";
+        $host = "localhost";
+        $database = "comp_523";
+
+        mysql_connect($host, $username, $password) or 
+        die("Can not connect to database: ".mysql_error());
+        mysql_select_db($database) or die("Can not select the database: ". mysql_error());
+        $result = mysql_query("SELECT tbl_images.image_url
+          FROM tbl_images WHERE tbl_images.image_id = 1");
+        $row = mysql_fetch_row($result);
+        echo $image_url;
+
+?>  
+	<div data-role="page" id = "broken" data-theme="b">
+    	<div data-role = "header"><h1>The link you followed does not work right now</h1></div>
+   		 <div data-role = "content" >
+        <!--<form enctype = "multipart/form-data" action -->
+        <?php echo '<img src = "upload/'. $row[0].'" alt = "fun">';
+        ?>
+      		<div>Probably something to do with Will not knowing server communication all that well yet</div>
+        <div><a href = "AdminMainPage.html" data-role="button">Back Home</a></div>
+      </div>
+    </div>
+ </body>
+ <script type="text/javascript">
+      $.ajax({                                      
+      url: 'search.php',                  
+      data: "",                        
+      dataType: 'json',
+      success: function(data)          //on recieve of reply
+
+ </script>
+ </html>
