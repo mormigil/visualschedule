@@ -5,7 +5,7 @@
 <head>
 <meta charset=utf-8>
 <title>Choice Page</title>
-<link rel = stylesheet href = "Choice style.css" type = "text/css">
+<link rel = stylesheet href = "choice_style.css" type = "text/css">
 <script src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
@@ -55,7 +55,10 @@ $(document).ready(function(){
         mysql_connect($host, $username, $password) or 
         die("Can not connect to database: ".mysql_error());
         mysql_select_db($database) or die("Can not select the database: ".mysql_error());
-
+        $result = mysql_query("SELECT tbl_sched.image_one, tbl_sched.image_two,
+         tbl_sched.image_three FROM tbl_sched") or die("Cannot select".mysql_error());
+        $row = mysql_fetch_array($result);
+        print_r($row);
         $picID = "fba5b3e449f06ea7dfc5b4abc14a6833Chrysanthemum.jpg"
 
 

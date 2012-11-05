@@ -1,0 +1,12 @@
+img{
+	height: 150px;
+	width: 200px;
+}
+
+.pic_boxes{
+	float: left;
+}
+
+.dropPictures{
+	margin-top: 10%;
+}

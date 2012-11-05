@@ -1,10 +1,10 @@
-<DOCTYPE html>
-<html lang = "en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset = "utf-8">
-	<title>PHP/MySQL tests</title>
+    <title>Upload a Picture</title>
+    <meta charset="utf-8" />
 </head>
-<body>
+<body>      
 	<div id = "wrapper">
 	<div id = "content">
 	<form enctype="multipart/form-data" action="insert.php" method="POST" name = "changer">
@@ -12,7 +12,7 @@
 		Please choose a file: <br><input name="image" accept = "image/jpeg" type="file"><br>
 		Please choose some tags:<input name="tags" type ="text"><br><br>
 		<input value="Submit" type="submit">
-	</form> 
+	</form>
 	</div>
 	</div>
 </body>

@@ -3,23 +3,16 @@
 <head>
     <title>Upload a Picture</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 </head>
 <body>      
 	<div id = "wrapper">
 	<div id = "content">
-		<div>the back end is missing here, please fix me</div>
 	<form enctype="multipart/form-data" action="insert.php" method="POST" name = "changer">
 		<input name="MAX_FILE_SIZE" value = "1000000" type = "hidden">
 		Please choose a file: <br><input name="image" accept = "image/jpeg" type="file"><br>
 		Please choose some tags:<input name="tags" type ="text"><br><br>
 		<input value="Submit" type="submit">
-		 <div><a href = "AdminMainPage.html" data-role="button"  data-theme="e">Back Home</a></div>
-	</form> 
+	</form>
 	</div>
 	</div>
 </body>
