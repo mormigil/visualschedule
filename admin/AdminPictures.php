@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>Schedule Creator</title>
+    <link rel="stylesheet" href= "stylesheet.css" />
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" >
-    <link rel="stylesheet" href="picSelection.css">
-    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+
+    <link rel="stylesheet" href= "stylesheet.css" />
+
     <script type = "text/javascript">
     var i = 0;
     var images = new Array();
@@ -62,9 +62,9 @@
             "Cannot insert".mysql_error());
         }
 ?>
-	<div data-role="page" id = "broken" data-theme="b">
-    	<div data-role = "header"><h1>Build a Schedule!</h1></div>
-   		 <div data-role = "content">
+	<div class="page" id = "broken" data-theme="b">
+    	<div class = "header"><h1>Build a Schedule!</h1></div>
+   		 <div class = "content">
         <form name = "search" enctype = "multipart/form-data" 
           action= "<?php echo $_SERVER['PHP_SELF'];?>" method = "post">
           <label for="search-basic">Search:</label>
@@ -96,9 +96,7 @@
             }
             if(!$dataClone){
               $image_url[] = $data[0];
-              if(file_exists("upload/".$data[0])&&!empty($data[0])){
-                echo '<img src = "upload/'. $data[0].'" alt = "fun">';
-              }
+              echo '<img src = "upload/'. $data[0].'" alt = "fun">';
             }
           }
         }else{
@@ -106,7 +104,7 @@
         }
         ?>
       </div>
-        <div><a href = "AdminMainPage.html" data-role="button">Back Home</a></div>
+        <div><a href = "AdminMainPage.html" class="button">Back Home</a></div>
       </div>
     </div>
  </body>

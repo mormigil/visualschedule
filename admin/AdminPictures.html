@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule Creator</title>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+ >
+ <link rel="stylesheet" href= "stylesheet.css" />
+</head>
+<body> 
+<?php 
+        $username = "root";
+        $password = "";
+        $host = "localhost";
+        $database = "comp_523";
+
+        mysql_connect($host, $username, $password) or 
+        die("Can not connect to database: ".mysql_error());
+        mysql_select_db($database) or die("Can not select the database: ". mysql_error());
+        $image = "cats";
+        $image_url = mysql_query("SELECT tbl_images.image_path FROM tbl_images, tbl_images_tags, tbl_tags WHERE tbl_images.tag_id = 1")
+        echo $image_url;
+?>  
+	<div class="page" id = "broken" data-theme="b">
+    	<div class = "header"><h1>The link you followed does not work right now</h1></div>
+   		 <div class = "content" >
+        <!--<form enctype = "multipart/form-data" action -->
+        <?php echo '<img src = "'. $image.'" alt = "fun">';
+        ?>
+      		<div>Probably something to do with Will not knowing server communication all that well yet</div>
+        <div><a href = "AdminMainPage.html" class="button">Back Home</a></div>
+      </div>
+    </div>
+ </body>
+ <script type="text/javascript">
+      $.ajax({                                      
+      url: 'search.php',                  
+      data: "",                        
+      dataType: 'json',
+      success: function(data)          //on recieve of reply
+
+ </script>
+ </html>

@@ -10,7 +10,7 @@
 		error_reporting(E_ALL);
 		ini_set("display_errors", 1);
 		$target = "upload/";
-		$filehash = md5_file($_FILES['image']['name']);
+		$filehash = md5_file($_FILES['image']['tmp_name']);
 		$target = $target . $filehash . basename($_FILES['image']['name']);
 
 		$image = $filehash . ($_FILES['image']['name']);
