@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" >
     <link rel="stylesheet" href="picSelection.css">
     <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+    <link rel="stylesheet" href= "stylesheet.css" />
     <script type = "text/javascript">
     var i = 0;
     var images = new Array();
     $(document).ready(function(){
-      if(i<3){
       $("img").click(function(){
+        if(i<3){
         $(this).unbind('click');
         $imgSrc = $(this).attr('src');
         $imgAlt = $(this).attr('alt');
-        $("#leftBox").append("<img src="+$imgSrc +" alt="+ $imgAlt +" />");
-        $("#selected_pics").find('div').addClass("dropPictures");
+        $("#leftBox").append("<img src="+$imgSrc +" alt="+ $imgAlt +">");
+        $("#selected_pics").addClass("dropPictures");
         images[i] = $imgSrc.substring(7);
         alert(images[i]);
         i++;
@@ -30,8 +30,8 @@
           $("#pic_2").val(images[1]);
         if(i==3)
           $("#pic_3").val(images[2]);
+      }
       });
-    }
       $("#pic_1").val(images[0]);
       $("#pic_2").val(images[1]);
       $("#pic_3").val(images[2]);
@@ -62,9 +62,9 @@
             "Cannot insert".mysql_error());
         }
 ?>
-	<div data-role="page" id = "broken" data-theme="b">
-    	<div data-role = "header"><h1>Build a Schedule!</h1></div>
-   		 <div data-role = "content">
+	<div class="page" id = "broken" data-theme="b">
+    	<div class = "header"><h1>Build a Schedule!</h1></div>
+   		 <div class = "content">
         <form name = "search" enctype = "multipart/form-data" 
           action= "<?php echo $_SERVER['PHP_SELF'];?>" method = "post">
           <label for="search-basic">Search:</label>
@@ -74,6 +74,7 @@
         <div class = "pic_boxes" id = "leftBox"></div>
         <form name = "selectedPics" id = "selected_pics" enctype = "multipart/form-data"
           action = "<?php echo $_SERVER['PHP_SELF'];?>" method = "post">
+          <br>
           <input type = "hidden" name = "pic1" id = "pic_1" value = "">
           <input type = "hidden" name = "pic2" id = "pic_2" value = "">
           <input type = "hidden" name = "pic3" id = "pic_3" value = "">
@@ -106,7 +107,7 @@
         }
         ?>
       </div>
-        <div><a href = "AdminMainPage.html" data-role="button">Back Home</a></div>
+        <div><a href = "AdminMainPage.html" class="button">Back Home</a></div>
       </div>
     </div>
  </body>

@@ -3,38 +3,42 @@
 <head>
 
     <title>Starter page</title>
+    <link rel="stylesheet" href= "stylesheet.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 </head>
 <body>
-    <div data-role="page" id="home">
-        <div data-role="header">
+    <div class="page" id="home">
+        <div class="header">
             <h1>Visual Schedule Admin Main Page</h1>
         </div>
-        <div data-role="content">
-            <a href="AdminScheduleCreator.html" data-role = "button" data-theme="c">
+        <div class="content">
+        <div>  <a href="AdminScheduleCreator.html" class = "button" data-theme="c">
             
             Create New Schedule from Template
         </a>
-            <a href="AdminLoadASchedule.html" data-role = "button" data-theme="c">
+    </div>
+    <div>
+            <a href="AdminLoadASchedule.html" class = "button" data-theme="c">
             
             Load an Old Schedule to Start From
         </a>
-            <a href="AdminBroken.html" data-role = "button" data-theme="c">
+        </div>
+        <div>
+            <a href="AdminBroken.html" class = "button" data-theme="c">
             
             Edit the Active Schedule
         </a>
-         </a>
-            <a href="AdminUploadAPicture.php" data-role = "button" data-theme="c">
+         </div>
+         <div>
+            <a href="AdminUploadAPicture.php" class = "button" data-theme="c">
             
             Upload a picture
         </a>
+    </div>
           </div>
-        <div data-role="footer">
+        <div class="footer">
             <h4>Something should probably go here</h4>
         </div>
     </div>
