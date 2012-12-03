@@ -92,13 +92,14 @@ class Schedule{
 
 	public function getFromTag($tags){
 		$mysqli = new mysqli("mydb5.cs.unc.edu", "ankhar", "fireforge5", "comp523p1db");
-		$result = $mysqli->query("SELECT sched_id FROM tbl_sched WHERE tags = '". $tags"'");
+		$result = $mysqli->query("SELECT sched_id FROM tbl_sched 
+			WHERE tags = '". $tags . "'");
 		if($result){
 			if($result->num_rows == 0){
 				return null;
 			}
 			$schedule_IDs = $result->fetch_array();
-			findByID($schedule_IDs['sched_id'])
+			findByID($schedule_IDs['sched_id']);
 		}
 
 	}
@@ -111,3 +112,4 @@ class Schedule{
 		$this->image_three = $image_three;
 	}
 }
+?>
