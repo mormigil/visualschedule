@@ -1,9 +1,9 @@
  <?php
 
- 	$username = "root";
-    $password = "";
-    $host = "localhost";
-    $database = "comp_523";
+ 	$username = "ankhar";
+    $password = "fireforge5";
+    $host = "mydb5.cs.unc.edu";
+    $database = "comp523p1db";
     $search = "";
     if(isset($_POST['keywords']))
     	$search = $_POST['keywords'];
@@ -15,8 +15,19 @@
     $images = array();
     if(mysql_num_rows($result)>0){
         while($data = mysql_fetch_array($result)){
-            print($data[0]);
-    	    $images[] = $data[0];
+            $dataClone = false;
+            while($i<count($images)){
+                if($image_url[$i] == $data[0]){
+                    $dataClone = true;
+                    break;
+                }
+            $i++;
+            }
+            if(!$dataClone){
+                if(file_exists("upload/".$data[0])&&!empty($data[0])){
+                    $images[] = array($data[0]);
+                }
+            }
         }
     }
     echo json_encode($images);

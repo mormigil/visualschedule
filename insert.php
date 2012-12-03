@@ -16,10 +16,10 @@
 		$image = $filehash . ($_FILES['image']['name']);
 		$tags = $_POST['tags'];
 
-		$username = "root";
-		$password = "";
-		$host = "localhost";
-		$database = "comp_523";
+		$username = "ankhar";
+		$password = "fireforge5";
+		$host = "mydb5.cs.unc.edu";
+		$database = "comp523p1db";
 
 		mysql_connect($host, $username, $password) or 
 		die("Can not connect to database: ".mysql_error());
